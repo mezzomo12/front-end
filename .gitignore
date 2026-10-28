@@ -1,0 +1,45 @@
+# Dependências
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Builds nativos gerados
+/ios
+/android
+.kotlin/
+*.orig.*
+
+# Chaves e certificados
+*.jks
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# Variáveis de ambiente locais (o .env.example continua versionado)
+.env
+.env*.local
+
+# Sistema operacional e editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Claude Code / agentes de IA
+.claude/
+CLAUDE.md
+AGENTS.md
