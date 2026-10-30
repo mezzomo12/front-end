@@ -47,7 +47,7 @@ O app foi montado com estes dados de demonstração; o contrato real pode ser di
 | Categorias do mapa | Lista de categorias (ou confirmação de que são fixas no app). |
 | Login e cadastro | Endpoints de cadastro e login; formato do token; regras de e-mail e senha. |
 | Meus Dados | Consulta e atualização de perfil (nome, e-mail, link) e envio de foto. |
-| Cadastro de Produto | Criação de asset (título, descrição, preço, arquivo/imagem). Não há estoque: são produtos digitais. |
+| Cadastro de Produto | Criação de asset (título, descrição, preço, imagem). O app já escolhe a imagem da galeria (`expo-image-picker`, componente `ImageField`); falta definir o formato do envio (multipart ou outro), tamanho máximo e tipos aceitos. Não há estoque: são produtos digitais. |
 | Carrinho e compra | Se o carrinho é só local ou também no servidor; criação de pedido; pagamento. |
 | Meus Pedidos | Listagem dos pedidos do usuário. |
 | Erros | Formato padrão (status e mensagem), para exibir ao usuário. |

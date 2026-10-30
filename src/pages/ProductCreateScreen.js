@@ -3,12 +3,13 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 import AppText from '../components/AppText';
 import Button from '../components/Button';
+import ImageField from '../components/ImageField';
 import Screen from '../components/Screen';
 import TextField from '../components/TextField';
 import { colors, spacing } from '../constants/theme';
 import { validateProduct } from '../utils/validators';
 
-const emptyForm = { title: '', description: '', price: '' };
+const emptyForm = { title: '', description: '', price: '', image: null };
 
 export default function ProductCreateScreen() {
   const [form, setForm] = useState(emptyForm);
@@ -32,6 +33,12 @@ export default function ProductCreateScreen() {
   return (
     <Screen>
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
+        <ImageField
+          label="Imagem do Produto"
+          value={form.image}
+          onChange={setField('image')}
+          error={errors.image}
+        />
         <TextField
           label="Título"
           placeholder="Ex: Troll Mutante"

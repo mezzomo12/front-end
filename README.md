@@ -50,14 +50,14 @@ Regras do projeto estão em [CLAUDE.md](CLAUDE.md) (e [AGENTS.md](AGENTS.md)).
 | Início (Home) | Campos de login; **Entrar desabilitado** (falta contrato de autenticação). "Explorar lojas" é um atalho provisório para o menu. |
 | Cadastro | Formulário com validação; o envio ainda não existe (avisa que aguarda a API). |
 | Mapa de Lojas (menu principal) | Busca, configurações, carrinho com contador e categorias sobre o mapa. Funciona com mocks. |
-| Lista de assets (categoria/busca) | Funciona com mocks; trata carregamento, erro e lista vazia. |
+| Lista de assets (categoria/busca) | Busca por título, descrição e categoria, sem diferenciar acentos nem maiúsculas. Funciona com mocks; trata carregamento, erro e lista vazia. |
 | Detalhe do asset | Funciona com mocks; adiciona/remove do carrinho. |
 | Carrinho | Funciona localmente (em memória). **Finalizar compra desabilitado.** |
 | Configurações | Navegação para as demais telas. |
-| Meus Dados | Formulário com validação; **Editar foto desabilitado**; Salvar apenas valida. |
+| Meus Dados | Foto de perfil escolhida da galeria (recorte quadrado), guardada só em memória; Salvar apenas valida e nada é enviado. |
 | Meus Pedidos | Vazio: pedidos virão da API. |
 | Atendimento ao Cliente | Telefones, status ONLINE/OFFLINE calculado pelo horário de Brasília; **Enviar e-mail desabilitado** até definir o endereço. |
-| Cadastro de Produto | Formulário com validação; **Publicar apenas valida**. |
+| Cadastro de Produto | Formulário com escolha de imagem da galeria (com prévia) e validação; **Publicar apenas valida**, o envio da imagem depende da API. |
 
 Nenhuma operação simula sucesso: o que depende da API fica desabilitado ou avisa que ainda não está disponível.
 

@@ -36,10 +36,11 @@ export function validateRegister({ email, password, confirmPassword }) {
   return errors;
 }
 
-export function validateProduct({ title, description, price }) {
+export function validateProduct({ title, description, price, image }) {
   const errors = {};
 
   if (!title.trim()) errors.title = 'Informe o título.';
+  if (!image) errors.image = 'Escolha a imagem do produto.';
   if (!description.trim()) errors.description = 'Informe a descrição.';
 
   if (!price.trim()) {

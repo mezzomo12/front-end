@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 import { fontFiles } from './src/constants/theme';
 import { CartProvider } from './src/context/CartContext';
+import { ProfileProvider } from './src/context/ProfileContext';
 import AppNavigator from './src/routes/AppNavigator';
 import navigationTheme from './src/routes/navigationTheme';
 
@@ -25,11 +26,13 @@ export default function App() {
   }
 
   return (
-    <CartProvider>
-      <NavigationContainer theme={navigationTheme}>
-        <AppNavigator />
-        <StatusBar style="light" />
-      </NavigationContainer>
-    </CartProvider>
+    <ProfileProvider>
+      <CartProvider>
+        <NavigationContainer theme={navigationTheme}>
+          <AppNavigator />
+          <StatusBar style="light" />
+        </NavigationContainer>
+      </CartProvider>
+    </ProfileProvider>
   );
 }

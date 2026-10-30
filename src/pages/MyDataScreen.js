@@ -1,18 +1,20 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 
 import AppText from '../components/AppText';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import ImageField from '../components/ImageField';
 import Screen from '../components/Screen';
 import TextField from '../components/TextField';
 import { colors, spacing } from '../constants/theme';
+import { useProfile } from '../context/ProfileContext';
 import { validateProfile } from '../utils/validators';
 
 const emptyForm = { username: '', email: '', link: '' };
 
 export default function MyDataScreen() {
+  const { photo, setPhoto } = useProfile();
   const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState({});
   const [validated, setValidated] = useState(false);
@@ -35,11 +37,16 @@ export default function MyDataScreen() {
     <Screen>
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <Card>
-          <View style={styles.photoBox}>
-            <Ionicons name="camera-outline" size={48} color={colors.primary} />
-          </View>
-          {/* Escolher foto depende de salvar o perfil na API, ainda sem contrato. */}
-          <Button title="Editar foto" variant="outline" size="sm" disabled style={styles.photoButton} />
+          {/* A foto fica só no app (em memória): enviá-la ao servidor depende do contrato da API. */}
+          <ImageField
+            square
+            size={140}
+            icon="camera-outline"
+            pickTitle="Editar foto"
+            changeTitle="Editar foto"
+            value={photo}
+            onChange={setPhoto}
+          />
 
           <TextField
             label="Nome de usuário:"
@@ -81,15 +88,4 @@ export default function MyDataScreen() {
 
 const styles = StyleSheet.create({
   content: { padding: spacing.lg },
-  photoBox: {
-    alignSelf: 'center',
-    width: 140,
-    height: 140,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 2,
-    borderStyle: 'dashed',
-    borderColor: colors.border,
-  },
-  photoButton: { alignSelf: 'center' },
 });

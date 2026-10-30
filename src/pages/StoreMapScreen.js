@@ -63,7 +63,6 @@ export default function StoreMapScreen({ navigation }) {
         <BackgroundImage
           source={mapBackground}
           imageSize={mapBackgroundSize}
-          blur={MAP_BLUR}
           dim={0.35}
         />
         {/* Rótulos ancorados ao desenho do mapa: acompanham o corte do "cover" em qualquer tela. */}
