@@ -13,6 +13,11 @@ npm install
 npx expo start
 ```
 
+Opcional (terá que instalar uma dependência, e a extensão "Mobile Simulator - responsive testing tool" (Simulador de telefone móvel - teste site responsivo), no Google.
+```bash
+npx expo start --web
+```
+
 Escaneie o QR code com o Expo Go. Se a rede bloquear a conexão (comum em Wi-Fi de faculdade), use `npx expo start --tunnel`.
 
 Verificações:
